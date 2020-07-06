@@ -1,43 +1,18 @@
 import React, { Component } from 'react';
-import { HashRouter as Router, Link, NavLink, Route } from 'react-router-dom';
+import { HashRouter as Router,  NavLink, Route } from 'react-router-dom';
 import './App.css';
-import Home from './pages/Index/index' 
-
-const Home_C1 = () => (
-  <div>
-    <h2>Home_C1</h2>
-  </div>
-)
-const Home_C2 = () => (
-  <div>
-    <h2>Home_C2</h2>
-  </div>
-)
-
-const About = () => (
-  <div>
-    <h2>About</h2>
-  </div>
-)
-
-const Product = () => (
-  <div>
-    <h2>Product</h2>
-  </div>
-)
-
+import kkb_Preview from './components/kkb_Preview/kkb_Preview.js'
+import kkb_Real from './components/kkb_Real/kkb_Real.js'
 class App extends Component {
   render() {
     return (
       <Router>
         <div className="App">
-          <NavLink className="linkRouter" activeClassName="activeLinkRouter" to="/home">Home</NavLink>
-          <NavLink className="linkRouter" activeClassName="activeLinkRouter" to="/About">About</NavLink>
-          <NavLink className="linkRouter" activeClassName="activeLinkRouter" to="/Product">Product</NavLink>
-          <hr/>
-          <Route path="/home" exact component={Home}></Route>
-          <Route path="/about" component={About}></Route>
-          <Route path="/product" component={Product}></Route>
+          <NavLink className="linkRouter" activeClassName="activeLinkRouter" to="/kkb_Preview">kkb预习</NavLink>
+          <NavLink className="linkRouter" activeClassName="activeLinkRouter" to="/kkb_Real">kkb正课</NavLink>
+          <hr />
+          <Route path="/kkb_Preview" component={kkb_Preview}/>
+          <Route path="/kkb_Real" component={kkb_Real}/>
         </div>
       </Router>
     );
